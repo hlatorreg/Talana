@@ -12,14 +12,14 @@ PROJECT_URLS = {
     "Source Code": "https://github.com/hlatorreg/Talana",
 }
 INSTALL_REQUIRES = [
-    "Flask",
+    "Flask==2.0.1",
     "flask-restx",
     "python-dateutil",
     "python-dotenv",
     "requests",
     "urllib3",
-
-    "werkzeug==0.16.1",
+    "jinja2<3.1.0",
+    "werkzeug==2.0.3",
 ]
 EXTRAS_REQUIRE = {
     "dev": [
