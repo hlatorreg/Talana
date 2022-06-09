@@ -1,7 +1,15 @@
 """Data Transfer Objects for the Kombat API"""
-from flask_restx import Model
+from flask_restx import Model, ValidationError
 from flask_restx.reqparse import RequestParser
 from flask_restx.fields import Nested, String, List
+
+
+def max_length(max_length):
+    def validate(s):
+        if len(s) <= max_length:
+            return s
+        raise ValidationError(f"String must not pass {max_length} chars long")
+    return validate
 
 
 kombat_reqparser = RequestParser(bundle_errors=True)
@@ -15,7 +23,7 @@ kombat_reqparser.add_argument(
 player1_reqparser = RequestParser(bundle_errors=True)
 player1_reqparser.add_argument(
     name="movimientos",
-    type=str,
+    type=max_length(5),
     action="append",
     location=("player1", ),
     required=True,
@@ -23,7 +31,7 @@ player1_reqparser.add_argument(
 )
 player1_reqparser.add_argument(
     name="golpes",
-    type=str,
+    type=max_length(1),
     action="append",
     location=("player1", ),
     required=True,
@@ -33,7 +41,7 @@ player1_reqparser.add_argument(
 player2_reqparser = RequestParser(bundle_errors=True)
 player2_reqparser.add_argument(
     name="movimientos",
-    type=str,
+    type=max_length(5),
     action="append",
     location=("player2", ),
     required=True,
@@ -41,7 +49,7 @@ player2_reqparser.add_argument(
 )
 player2_reqparser.add_argument(
     name="golpes",
-    type=str,
+    type=max_length(1),
     action="append",
     location=("player2", ),
     required=True,
