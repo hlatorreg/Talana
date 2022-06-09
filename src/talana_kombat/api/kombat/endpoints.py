@@ -8,7 +8,7 @@ from talana_kombat.api.kombat.business import get_relato
 
 from talana_kombat.api.kombat.dto import (
     fields_model,
-    player_model,
+    kombat_model,
     response_model,
     kombat_reqparser,
     player1_reqparser,
@@ -17,7 +17,7 @@ from talana_kombat.api.kombat.dto import (
 
 kombat_ns = Namespace(name="kombat", validate=True)
 kombat_ns.models[fields_model.name] = fields_model
-kombat_ns.models[player_model.name] = player_model
+kombat_ns.models[kombat_model.name] = kombat_model
 kombat_ns.models[response_model.name] = response_model
 
 
@@ -25,8 +25,7 @@ kombat_ns.models[response_model.name] = response_model
 class StartKombat(Resource):
     """Handles HTTP requests to URL: /api/v1/kombat/start."""
 
-    @kombat_ns.expect(kombat_reqparser)
-    # @kombat_ns.marshal_with(player_model)
+    @kombat_ns.expect(kombat_model)
     @kombat_ns.response(int(HTTPStatus.OK), "Kombat as begun!", response_model)
     @kombat_ns.response(int(HTTPStatus.BAD_REQUEST), "Validation error.")
     @kombat_ns.response(int(HTTPStatus.INTERNAL_SERVER_ERROR),
