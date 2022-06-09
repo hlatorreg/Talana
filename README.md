@@ -33,7 +33,7 @@ De ser posible, que quede solo un commit con los cambios.
 
 3. ¿Cuál ha sido la situación más compleja que has tenido con esto?
 
-    R:
+    R: Nada serio, diría que al comienzo de la carrera laboral era mas complejo. Lo primero que se me viene a la mente son merges despues de un par de días, cuando el repositorio habia cambiado mucho y tener que lidiar con un monton de conflictos de forma manual, sin saber que existen herramientas para facilitar ese proceso.
      
 4. ¿Qué experiencia has tenido con los microservicios?
 
