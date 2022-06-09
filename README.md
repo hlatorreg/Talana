@@ -1,4 +1,18 @@
-**Preguntas generales**
+## README
+---------
+
+* Solo con Docker
+  1. `docker pull ghcr.io/hlatorreg/talana:latest`
+  2. `docker run -i -p 5000:5000 ghcr.io/hlatorreg/talana:latest`
+
+* Con código fuente + Docker
+  1. `git clone https://github.com/hlatorreg/Talana.git`
+  2. `cd Talana`
+  3. `docker build -t talana .`
+  4. `docker run -i -p 5000:5000 -t talana`
+
+## Preguntas generales
+----------------------
 
 1. Supongamos que en un repositorio GIT hiciste un commit y olvidaste un archivo. Explica cómo se
 soluciona si hiciste push, y cómo si aún no hiciste.
@@ -15,7 +29,7 @@ De ser posible, que quede solo un commit con los cambios.
 
 2. Si has trabajado con control de versiones ¿Cuáles han sido los flujos con los que has trabajado?
 
-    R: Generalmente un flujo de ramas, donde existe una rama por ambiente y cada *feature* es una rama individual que luego se une a las ramas principales.
+    R: Generalmente un flujo de ramas, donde existe una rama por ambiente, cada *feature* es una rama individual que luego se une a las ramas principales de forma ascendiente.
 
 3. ¿Cuál ha sido la situación más compleja que has tenido con esto?
 
@@ -25,7 +39,7 @@ De ser posible, que quede solo un commit con los cambios.
 
     R: Mi primera experiencia con microservicios fue con NodeJS, ejecutando servicios en RasperryPies, publicando mensajes a Google Pub/Sub que posteriormente eran escuchados por un backend en Laravel. El fin de esta *arquitectura* era mantener un control sobre dispositivos de acceso (puertas, portones, camaras, etc).
 
-    Actualmente trabajo en un backend en .NET3.1/5/6, con muchos servicios montados en un cluster de AKS y una serie de orquestadores realizando operaciones de negocios.
+    Actualmente trabajo en un backend en .NET3/5/6, con muchos servicios montados en un cluster de AKS y una serie de orquestadores realizando operaciones de negocios.
 
 5. ¿Cuál es tu servicio favorito de GCP o AWS? ¿Por qué?
 
