@@ -53,10 +53,10 @@ player_fields = {}
 player_fields["movimientos"] = List(String, attribute="movimientos")
 player_fields["golpes"] = List(String, attribute="golpes")
 
-fields_model = Model("fields", player_fields)
+fields_model = Model("player_fields", player_fields)
 
-player_model = Model(
-    "Payload",
+kombat_model = Model(
+    "payload",
     {
         "player1": Nested(fields_model),
         "player2": Nested(fields_model)
