@@ -11,6 +11,8 @@
   3. `docker build -t talana .`
   4. `docker run -i -p 5000:5000 -t talana`
 
+> En ambos casos acceder a la url [http://localhost:5000/api/v1/ui](http://localhost:5000/api/v1/ui) para visualizar Swagger UI
+
 ## Preguntas generales
 ----------------------
 
